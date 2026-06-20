@@ -7,8 +7,10 @@ import './styles/fonts.css'
 import App from './App.jsx'
 import { theme } from './mui/theme.js'
 
+const { VITE_GRAPHQL_URI } = import.meta.env
+
 const client = new ApolloClient({
-  uri: "https://ap-south-1.cdn.hygraph.com/content/cmq6u6gua001v06uunyvc0meu/master",
+  uri: VITE_GRAPHQL_URI,
   cache: new InMemoryCache()
 })
 
