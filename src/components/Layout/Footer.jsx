@@ -6,9 +6,10 @@ const Footer = () => {
       <Typography
         component="p"
         variant="p"
-        color="primary"
+        
         sx={{
-          bgcolor: "#e2e1e1",
+          bgcolor: "primary.main",
+          color: "white",
           p: 2,
           textAlign: "center",
           mt: 10,
