@@ -19,3 +19,18 @@ export const GET_BLOGS = gql`
     }
   }
 `
+
+
+export const GET_AUTHORS = gql`
+  query {
+    authors {
+			id
+      name
+      slug
+      avatar{
+        url
+      }
+      
+    }
+  }
+`
