@@ -34,3 +34,28 @@ export const GET_AUTHORS = gql`
     }
   }
 `
+
+
+export const GET_AUTHOR_BY_SLUG = gql`  query getAuthorBySlug($slug:String!) {
+    author(where : {slug:$slug}) {
+      name
+      field
+      description {
+        html
+      }
+      slug
+      avatar{
+        url
+      }
+      posts{
+        coverImage{
+          url
+        }
+        id
+        slug
+        title
+      }
+      
+    }
+  }
+  `

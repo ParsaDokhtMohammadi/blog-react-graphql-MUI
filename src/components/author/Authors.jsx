@@ -16,7 +16,7 @@ const Authors = () => {
       {authors.map((author, index) => (
         <Fragment key={author.id}>
           <Grid size={{ xs: 12 }}>
-            <Link to={`/author/${author.slug}`} style={{ display: "flex", alignItems: "center" }}>
+            <Link to={`/authors/${author.slug}`} style={{ display: "flex", alignItems: "center" }}>
               <Avatar src={author.avatar.url} alt={author.name} sx={{ ml: 2 }} />
               <Typography variant="p" component="p" color="textSecondary">{author.name}</Typography>
             </Link>
