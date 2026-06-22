@@ -1,6 +1,8 @@
 import { useQuery } from '@apollo/client'
 import React from 'react'
 import { GET_BLOGS } from '../../graphql/queries'
+import { Grid } from '@mui/material'
+import CardEL from '../shared/CardEL'
 
 const Blogs = () => {
 
@@ -11,9 +13,13 @@ const Blogs = () => {
   if(error)  return <div>{error.message}</div>
   console.log(data)
   return (
-    <div>
-      blogs
-    </div>
+    <Grid container spacing={2} >
+      {data.posts.map(post=>(
+        <Grid size={{ xs: 12, sm: 6, md: 4 }} key={post.id}>
+            <CardEL data={post}/>
+        </Grid>
+      ))}
+    </Grid>
   )
 }
 
