@@ -18,11 +18,11 @@ const CardEL = ({ data }) => {
             </CardContent>
             <Divider variant='middle' sx={{ mb: 1 }} />
             <CardActions >
-                {/* <Link to={`/blog/${data.slug}`}>  style={{ textDecoration: 'none' , width: '100%' }} */}
+                <Link to={`/blogs/${data.slug}`} style={{width:"100%"}}>
                     <Button variant="outlined" size="small" color="primary" sx={{ width: "100%", borderRadius: 3 , fontWeight: 600 }}>
                         مطالعه مقاله
                     </Button>
-                {/* </Link> */}
+                </Link>
             </CardActions>
 
         </Card>
