@@ -28,7 +28,7 @@ const { loading, data, error } = useQuery(GET_POST_BY_SLUG, {
       <Grid container >
         <Grid xs={12} sx={{mt:9 , display:"flex", justifyContent:"space-between" , alignItems:"center" ,width:"100%"}}>
             <Typography component="h2" variant='h4' sx={{fontWeight:700}}>{post.title}</Typography>
-            <ArrowBackRoundedIcon OnClick={()=>navigate(-1)} sx={{cursor:"pointer"}}/>
+            <ArrowBackRoundedIcon onClick={()=>navigate(-1)} sx={{cursor:"pointer"}}/>
         </Grid>
         <Grid xs={12} sx={{mt:6}}>
           <img src={post.coverImage.url} alt={post.title} style={{width:"100%" , borderRadius:"15px"}}/>
