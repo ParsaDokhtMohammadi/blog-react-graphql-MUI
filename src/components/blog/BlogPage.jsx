@@ -7,6 +7,7 @@ import { Avatar, Box, Container, Grid, Typography } from '@mui/material'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
 import sanitizeHtml from "sanitize-html"
 import CommentForm from '../comment/CommentForm'
+import Comments from '../comment/Comment'
 
 const BlogPage = () => {
 const navigate = useNavigate()
@@ -44,6 +45,9 @@ const { loading, data, error } = useQuery(GET_POST_BY_SLUG, {
         </Grid>
         <Grid xs={12} sx={{mt:6 , width:"100%"}}>
           <CommentForm slug={blogSlug}/>
+        </Grid>
+        <Grid xs={12} sx={{mt:6 , width:"100%"}}>
+          <Comments slug={blogSlug}></Comments>
         </Grid>
       </Grid>
     </Container>

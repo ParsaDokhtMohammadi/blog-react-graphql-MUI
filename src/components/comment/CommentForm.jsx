@@ -17,13 +17,23 @@ const CommentForm = ({ slug }) => {
         if (!name || !email || !text) return toast.warning("لطفا تمام فیلدها را پر کنید", {
             position: "top-center"
         })
-        sendComment()
+        try {
+            sendComment()
+            setName("")
+            setEmail("")
+            setText("")
+            toast.success("کامت شما با موفقیت ارسال شد", {
+            position: "top-center"
+        })
+        }catch(e){
+            toast.error("خطا در ارسال کامنت", {
+                position: "top-center"
+            })
+        }
     }
 
 
-    if(data) toast.success("کامت شما با موفقیت ارسال شد", {
-            position: "top-center"
-        })
+
 
     return (
     <Grid container  sx={{boxShadow:"rgba(0,0,0,0.4) 0px 4px 12px",borderRadius:4, py:1 , mt:5 , display:"flex", flexDirection:"column", alignItems:"start" , justifyContent:"center" }}>

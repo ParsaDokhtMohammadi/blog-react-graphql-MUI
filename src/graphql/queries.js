@@ -79,3 +79,15 @@ export const GET_POST_BY_SLUG = gql`  query getPostBySlug($slug:String!) {
      }
    }
   `
+
+
+export const GET_COMMENTS_BY_SLUG = gql`  
+query getCommentsBySlug($slug:String!) {
+    comments(where : {post:{slug:$slug}}) {
+      id
+      name
+      email
+      text
+    }
+  }
+`
