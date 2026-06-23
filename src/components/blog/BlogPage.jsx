@@ -43,7 +43,7 @@ const { loading, data, error } = useQuery(GET_POST_BY_SLUG, {
           <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(post.content.html)  }}/>
         </Grid>
         <Grid xs={12} sx={{mt:6 , width:"100%"}}>
-          <CommentForm/>
+          <CommentForm slug={blogSlug}/>
         </Grid>
       </Grid>
     </Container>
