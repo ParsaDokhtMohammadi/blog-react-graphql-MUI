@@ -3,13 +3,14 @@ import React from 'react'
 import { GET_BLOGS } from '../../graphql/queries'
 import { Grid } from '@mui/material'
 import CardEL from '../shared/CardEL'
+import Loader from '../shared/Loader'
 
 const Blogs = () => {
 
   const {loading , data , error} = useQuery(GET_BLOGS)
 
 
-  if(loading) return <div>loading...</div>
+  if(loading) return <Loader/>
   if(error)  return <div>{error.message}</div>
   return (
     <Grid container spacing={2} >

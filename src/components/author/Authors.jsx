@@ -3,12 +3,13 @@ import { GET_AUTHORS } from '../../graphql/queries'
 import { Avatar, Divider, Grid, Typography } from '@mui/material'
 import { Fragment } from 'react'
 import { Link } from 'react-router'
+import Loader from '../shared/Loader'
 
 const Authors = () => {
 
   const { loading, data, error } = useQuery(GET_AUTHORS)
 
-  if (loading) return <div>loading...</div>
+  if(loading) return <Loader/>
   if (error) return <div>{error.message}</div>
   const { authors } = data
   return (

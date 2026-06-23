@@ -5,6 +5,7 @@ import { GET_AUTHOR_BY_SLUG } from '../../graphql/queries'
 import { Avatar, Container, Grid, Typography } from '@mui/material'
 import sanitizeHtml from 'sanitize-html'
 import CardEL from '../shared/CardEL'
+import Loader from '../shared/Loader'
 
 const AuthorPage = () => {
 
@@ -15,7 +16,7 @@ const AuthorPage = () => {
             slug: authorSlug
         }
     })
-    if (loading) return <div>loading...</div>
+    if(loading) return <Loader/>
     if (error) return <div>{error.message}</div>
     const {author} = data
     return (
