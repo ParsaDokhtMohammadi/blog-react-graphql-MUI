@@ -59,3 +59,23 @@ export const GET_AUTHOR_BY_SLUG = gql`  query getAuthorBySlug($slug:String!) {
     }
   }
   `
+export const GET_POST_BY_SLUG = gql`  query getPostBySlug($slug:String!) {
+    post(where : {slug:$slug}) {
+      title
+      slug
+      content{
+        html
+      }
+      coverImage{
+        url
+      }
+      author{
+        name
+        field
+        avatar{
+          url
+        }
+      }
+     }
+   }
+  `
